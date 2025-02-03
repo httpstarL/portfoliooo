@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaitanya</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="static/img/ck-logo-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/hero/star.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/ck-logo-180x180.png">
+    <link rel="shortcut icon" href="static/img/ck-logo.png" type="image/png" />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <link rel="stylesheet" href="static/css/media.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* ... existing styles ... */
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="cursor-canvas"></canvas>
+    <div id="preloader">
+        <div class="jumping-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <header id="header" class="header">
+        <div class="container container-lg">
+            <div class="header-nav">
+                <a href="#home" class="logo"><span></span></a>
+                <nav id="nav" class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects" class="nav-link">Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                                <svg class="theme-toggle-icon sun" viewBox="0 0 24 24">
+                                    <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0 1.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-11a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1zm0 12a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1zM3.5 12a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3a1 1 0 1 1 0 2h-3zm14 0a1 1 0 1 1 0-2h3a1 1 0 1 1 0 2h-3z"/>
+                                </svg>
+                                <svg class="theme-toggle-icon moon" viewBox="0 0 24 24">
+                                    <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                    <button id="nav-btn" class="nav-btn">
+                        <img id="nav-btn-img" src="static/img/icons/open.svg" alt="Navigation button"/>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container container-lg">
+            <div class="hero-row" data-aos="fade-zoom-in" data-aos-easing="ease-in-out" data-aos-delay="1800" data-aos-duration="2000">
+                <div class="hero-content">
+                    <span class="hero-greeting"> Hello, I am</span>
+                    <h1 class="hero-heading">Chaitanya Kshatriya</h1>
+                    <span class="hero-heading-subtitle">Fresher & Datascience </span
+            >
+            <div class="about-social-list">
+              <div class="social-links-row">
+                <a href="https://github.com/httpstarL" target="_blank">
+                  <img
+                    src="static/img/social_icons/github.svg"
+                    alt="Link to GitHub account"
+                  />
+                </a>
+
+                <a href="https://www.linkedin.com/in/chaitanya-mithil-0110b22b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+                   target="_blank">
+                  <img
+                    src="static/img/social_icons/linkedin.svg"
+                    alt="Link to LinkedIn profile"
+                /></a>
+                <a href="https://www.facebook.com/share/1KJusmZWri/" target="_blank">
+                  <img
+                    src="static/img/social_icons/facebook.svg"
+                    alt="Link to facebook profile"
+                /></a>
+                <a href="https://www.instagram.com/chaitx.kshatriya18?igsh=aG82Ynl1Y2U0ajc1" target="_blank">
+                  <img
+                    src="static/img/social_icons/instagram.svg"
+                    alt="Link to instagram profile"
+                /></a>
+              </div>
+            </div>
+
+            <div>
+              <a href="#projects" class="btn">My Portfolio</a>
+              <a href="#contact" class="btn btn-white">Contact Me</a>
+            </div>
+          </div>
+          <div class="hero-img">
+            <picture>
+                <!-- Large screens -->
+                <source 
+                    media="(min-width: 1400px)" 
+                    srcset="static/img/hero/star.png">
+                <!-- Medium screens -->
+                <source 
+                    media="(min-width: 768px)" 
+                    srcset="static/img/hero/star-medium.png">
+                <!-- Default image -->
+                <img
+                    src="static/img/hero/star.png"
+                    alt="Profile picture"
+                    loading="eager"
+                    decoding="async"
+                >
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-title" data-aos="fade-down" data-aos-duration="1000">
+          <h2 class="title">About Me</h2>
+        </div>
+        <div class="about-row">
+          <div class="about-content" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            <p class="about-descr">
+                I am a dedicated Data Science enthusiast with a strong foundation in web development. My passion lies in creating data-driven solutions and developing user-friendly web applications. I combine analytical thinking with creative problem-solving to build efficient and scalable projects.
+                <br/><br/>
+                Currently pursuing my Bachelor's degree, I am actively learning and implementing modern technologies while focusing on data analysis and web development. I believe in continuous learning and am excited to contribute to innovative projects that make a positive impact.
+            </p>
+
+            <!-- Education Section -->
+            <div class="education-section">
+                <h3 class="section-subtitle">Education</h3>
+                <div class="education-timeline">
+                    <div class="education-item" data-aos="fade-up" data-aos-duration="800">
+                        <div class="education-content">
+                            <span class="education-year">2022 - 2025</span>
+                            <h4 class="education-degree">Bachelor's in Data Science</h4>
+                            <p class="education-school">KBN Degree College, Vijayawada</p>
+                            <p class="education-details">Krishna University</p>
+                        </div>
+                    </div>
+
+                    <div class="education-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="education-content">
+                            <span class="education-year">2020 - 2022</span>
+                            <h4 class="education-degree">Intermediate (MPC)</h4>
+                            <p class="education-school">KBN Shine College</p>
+                            <p class="education-details">Mathematics, Physics & Chemistry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-cv-wrapper">
+                    <a href="https://drive.google.com/file/d/1Evad_6aFAtE53xDcSwSN-mnV5hdvKG0M/view" 
+                       class="education-cv-btn" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h3 class="section-subtitle">Skills</h3>
+                <div class="skill" data-skill="Web Design">
+                    <div class="skill-header">
+                        <h3 class="skill-title">Web Design</h3>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-skill="HTML/CSS">
+                    <div class="skill-header">
+                        <h3 class="skill-title">HTML/CSS</h3>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-skill="JavaScript">
+                    <div class="skill-header">
+                        <h3 class="skill-title">JavaScript</h3>
+                        <span class="skill-percentage">65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-skill="Photoshop">
+                    <div class="skill-header">
+                        <h3 class="skill-title">Photoshop</h3>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="services-section">
+                <h3 class="section-subtitle">Services</h3>
+                <div class="services-row">
+                    <div class="service-card" data-aos="fade-up" data-aos-duration="800">
+                        <div class="service-icon">💻</div>
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p class="service-description">
+                            Creating user-friendly interfaces with modern design principles. Focused on delivering intuitive experiences that combine aesthetics with functionality.
+                        </p>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="service-icon">🚀</div>
+                        <h3 class="service-title">Frontend Development</h3>
+                        <p class="service-description">
+                            Building responsive websites using HTML, CSS, and JavaScript. Implementing modern web technologies to create engaging and interactive user experiences.
+                        </p>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <div class="service-icon">✍️</div>
+                        <h3 class="service-title">Content Writing</h3>
+                        <p class="service-description">
+                            Writing clear and engaging content for websites and blogs. Creating SEO-friendly copy that effectively communicates your message to the target audience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="achievements-section">
+                <h3 class="section-subtitle">Achievements & Certifications</h3>
+                <div class="achievements-list">
+                    <!-- Packet Prep -->
+                    <div class="achievement-item" data-aos="fade-up" data-aos-duration="800">
+                        <div class="achievement-icon">🎯</div>
+                        <div class="achievement-content">
+                            <a href="https://drive.google.com/file/d/1bNxXmUvctU5rsPm0UxBk0oPh0L61hXKC/view" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="achievement-title">
+                                Data Science Internship
+                            </a>
+                            <p class="achievement-description">Completed intensive internship in Data Science and Analytics at Packet Prep.</p>
+                        </div>
+                    </div>
+
+                    <!-- Community Service -->
+                    <div class="achievement-item" data-aos="fade-up" data-aos-duration="800">
+                        <div class="achievement-icon">🌟</div>
+                        <div class="achievement-content">
+                            <a href="https://drive.google.com/file/d/1AOuiIZj-h6N-UDXICBiose1KvtZjbhz3/view" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="achievement-title">
+                                Community Service
+                            </a>
+                            <p class="achievement-description">Led and participated in impactful community service initiatives.</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Certificate -->
+                    <div class="achievement-item" data-aos="fade-up" data-aos-duration="800">
+                        <div class="achievement-icon">🤖</div>
+                        <div class="achievement-content">
+                            <a href="https://drive.google.com/file/d/1pngr0BT-8YA3QArvFfWIJSL-0KVBcLkk/view" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="achievement-title">
+                                AI Certification
+                            </a>
+                            <p class="achievement-description">Completed advanced certification in AI and Machine Learning practices.</p>
+                        </div>
+                    </div>
+
+                    <!-- TCS Interview Skills -->
+                    <div class="achievement-item" data-aos="fade-up" data-aos-duration="800">
+                        <div class="achievement-icon">💼</div>
+                        <div class="achievement-content">
+                            <a href="https://drive.google.com/file/d/1z2YXitMwa8VYJn9JyZzxjTNcZjHMB_Rz/view" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="achievement-title">
+                                Professional Skills
+                            </a>
+                            <p class="achievement-description">Mastered professional interview and communication skills through TCS training.</p>
+                        </div>
+                    </div>
+
+                    <!-- Police Department -->
+                    <div class="achievement-item" data-aos="fade-up" data-aos-duration="800">
+                        <div class="achievement-icon">🏅</div>
+                        <div class="achievement-content">
+                            <a href="#" 
+                               class="achievement-title">
+                                Police Department
+                            </a>
+                            <p class="achievement-description">Recognition from Andhra Pradesh State Police for outstanding contribution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container container-lg">
+        <div class="projects-title">
+          <h2 class="title">Works</h2>
+        </div>
+
+        <div class="projects-row">
+          <div class="project-box">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="static/img/works/kitchen.jpg" alt="Finance Dashboard Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Ai Kitchen Bot</h5>
+                  <p class="white">UI/UX Design</p>
+                </div>
+              </div>
+
+            </a>
+          </div>
+          <div class="project-box">
+            <a href="https://httpstarl.github.io/bhagavad-gita-slokas/" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="static/img/works/krishna.jpg" alt="Product Design Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Bhagavad Gita</h5>
+                  <p class="white">UI/UX Design</p>
+                </div>
+              </div>
+
+            </a>
+          </div>
+          <div class="project-box">
+            <a href="https://httpstarl.github.io/job-application-form/" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="static/img/works/job2.jpg" alt="Landing Page Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Job Application Form</h5>
+                  <p class="white">UI/UX Design, Web Development</p>
+                </div>
+              </div>
+
+            </a>
+          </div>
+          <div class="project-box">
+            <a href="https://httpstarl.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="static/img/works/portfolio.png" alt="Portfolio Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Portfolio</h5>
+                  <p class="white">Web Development</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="project-box">
+            <a href="https://httpstarl.github.io/calculator/" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="static/img/works/05.jpg" alt="Cosmic Sea Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Calculator</h5>
+                  <p class="white">UI/UX Design, Web Development</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="project-box">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img class="project-img" src="static/img/works/06.jpg" alt="eCommerce Project" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">eCommerce</h5>
+                  <p class="white">Web Development</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-title" data-aos="fade-down" data-aos-duration="1000">
+                <h2 class="title">Contact</h2>
+            </div>
+            
+            <div class="contact-content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="contact-intro">
+                    <h3>Tell me about your project.</h3>
+                    <p>Let's talk and work together!</p>
+                </div>
+
+                <!-- Contact Form -->
+                <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <div class="contact-form-footer">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="social-links-row footer-social">
+            <a href="https://github.com/httpstarL" target="_blank">
+              <img
+                src="static/img/social_icons/github.svg"
+                alt="Link to GitHub account"
+              />
+            </a>
+
+            <a href="https://www.linkedin.com/in/chaitanya-mithil-0110b22b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+               target="_blank">
+              <img
+                src="static/img/social_icons/linkedin.svg"
+                alt="Link to LinkedIn profile"
+              />
+            </a>
+
+            <a href="https://www.facebook.com/share/1KJusmZWri/" target="_blank">
+              <img
+                src="static/img/social_icons/facebook.svg"
+                alt="Link to facebook profile"
+              />
+            </a>
+
+            <a href="https://x.com/chaitanyamithil?t=XWGQLxIdhgpENAMUu6NCBA&s=09">
+              <img src="static/img/social_icons/xing.svg" alt="Link to Xing profile" />
+            </a>
+
+            <a href="https://www.instagram.com/chaitx.kshatriya18?igsh=aG82Ynl1Y2U0ajc1" target="_blank">
+              <img
+                src="static/img/social_icons/instagram.svg"
+                alt="Link to instagram profile"
+            /></a>
+          </div>
+
+          <div class="footer-copyright">
+            <p>©2025 All copy rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="goToTop" class="goToTop">
+      <a href="#home">
+        <img src="static/img/icons/arrow_up.svg" alt="Back to top"
+      /></a>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
