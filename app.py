@@ -198,17 +198,4 @@ Connect with me on LinkedIn: https://www.linkedin.com/in/chaitanya-mithil-0110b2
         return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    # Verify email configuration on startup
-    with app.app_context():
-        try:
-            send_email(
-                'Test Email',
-                app.config['MAIL_USERNAME'],
-                [app.config['MAIL_USERNAME']],
-                'Email configuration test'
-            )
-            print("Email configuration verified successfully!")
-        except Exception as e:
-            print(f"Warning: Email configuration test failed: {str(e)}")
-    
     app.run(debug=True)

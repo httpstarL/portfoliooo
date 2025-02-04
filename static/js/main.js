@@ -15,9 +15,9 @@ window.addEventListener("load", function () {
 //Hamburger menu
 navBtn.onclick = () => {
   if (nav.classList.toggle("open")) {
-    navBtnImg.src = "img/icons/close.svg";
+    navBtnImg.src = "/static/img/icons/close.svg";
   } else {
-    navBtnImg.src = "img/icons/open.svg";
+    navBtnImg.src = "/static/img/icons/open.svg";
   }
 };
 

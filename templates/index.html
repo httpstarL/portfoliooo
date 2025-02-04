@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chaitanya</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="static/img/ck-logo-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/img/hero/star.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/img/ck-logo-180x180.png">
-    <link rel="shortcut icon" href="static/img/ck-logo.png" type="image/png" />
-    <link rel="stylesheet" href="static/css/main.css" />
-    <link rel="stylesheet" href="static/css/media.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/ck-logo-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/hero/star.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/ck-logo-180x180.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/ck-logo.png') }}" type="image/png" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* ... existing styles ... */
@@ -120,7 +120,7 @@
                         </li>
                     </ul>
                     <button id="nav-btn" class="nav-btn">
-                        <img id="nav-btn-img" src="static/img/icons/open.svg" alt="Navigation button"/>
+                        <img id="nav-btn-img" src="{{ url_for('static', filename='img/icons/open.svg') }}" alt="Navigation button"/>
                     </button>
                 </nav>
             </div>
@@ -139,7 +139,7 @@
               <div class="social-links-row">
                 <a href="https://github.com/httpstarL" target="_blank">
                   <img
-                    src="static/img/social_icons/github.svg"
+                    src="{{ url_for('static', filename='img/social_icons/github.svg') }}"
                     alt="Link to GitHub account"
                   />
                 </a>
@@ -147,17 +147,17 @@
                 <a href="https://www.linkedin.com/in/chaitanya-mithil-0110b22b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                    target="_blank">
                   <img
-                    src="static/img/social_icons/linkedin.svg"
+                    src="{{ url_for('static', filename='img/social_icons/linkedin.svg') }}"
                     alt="Link to LinkedIn profile"
                 /></a>
                 <a href="https://www.facebook.com/share/1KJusmZWri/" target="_blank">
                   <img
-                    src="static/img/social_icons/facebook.svg"
+                    src="{{ url_for('static', filename='img/social_icons/facebook.svg') }}"
                     alt="Link to facebook profile"
                 /></a>
                 <a href="https://www.instagram.com/chaitx.kshatriya18?igsh=aG82Ynl1Y2U0ajc1" target="_blank">
                   <img
-                    src="static/img/social_icons/instagram.svg"
+                    src="{{ url_for('static', filename='img/social_icons/instagram.svg') }}"
                     alt="Link to instagram profile"
                 /></a>
               </div>
@@ -173,14 +173,14 @@
                 <!-- Large screens -->
                 <source 
                     media="(min-width: 1400px)" 
-                    srcset="static/img/hero/star.png">
+                    srcset="{{ url_for('static', filename='img/hero/star.png') }}">
                 <!-- Medium screens -->
                 <source 
                     media="(min-width: 768px)" 
-                    srcset="static/img/hero/star-medium.png">
+                    srcset="{{ url_for('static', filename='img/hero/star-medium.png') }}">
                 <!-- Default image -->
                 <img
-                    src="static/img/hero/star.png"
+                    src="{{ url_for('static', filename='img/hero/star.png') }}"
                     alt="Profile picture"
                     loading="eager"
                     decoding="async"
@@ -398,7 +398,7 @@
         <div class="projects-row">
           <div class="project-box">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img class="project-img" src="static/img/works/kitchen.jpg" alt="Finance Dashboard Project" />
+              <img class="project-img" src="{{ url_for('static', filename='img/works/kitchen.jpg') }}" alt="Finance Dashboard Project" />
               <div class="project-mask">
                 <div class="project-caption">
                   <h5 class="white">Ai Kitchen Bot</h5>
@@ -410,7 +410,7 @@
           </div>
           <div class="project-box">
             <a href="https://httpstarl.github.io/bhagavad-gita-slokas/" target="_blank" rel="noopener noreferrer">
-              <img class="project-img" src="static/img/works/krishna.jpg" alt="Product Design Project" />
+              <img class="project-img" src="{{ url_for('static', filename='img/works/krishna.jpg') }}" alt="Product Design Project" />
               <div class="project-mask">
                 <div class="project-caption">
                   <h5 class="white">Bhagavad Gita</h5>
@@ -422,7 +422,7 @@
           </div>
           <div class="project-box">
             <a href="https://httpstarl.github.io/job-application-form/" target="_blank" rel="noopener noreferrer">
-              <img class="project-img" src="static/img/works/job2.jpg" alt="Landing Page Project" />
+              <img class="project-img" src="{{ url_for('static', filename='img/works/job2.jpg') }}" alt="Landing Page Project" />
               <div class="project-mask">
                 <div class="project-caption">
                   <h5 class="white">Job Application Form</h5>
@@ -434,7 +434,7 @@
           </div>
           <div class="project-box">
             <a href="https://httpstarl.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
-              <img class="project-img" src="static/img/works/portfolio.png" alt="Portfolio Project" />
+              <img class="project-img" src="{{ url_for('static', filename='img/works/portfolio.png') }}" alt="Portfolio Project" />
               <div class="project-mask">
                 <div class="project-caption">
                   <h5 class="white">Portfolio</h5>
@@ -445,7 +445,7 @@
           </div>
           <div class="project-box">
             <a href="https://httpstarl.github.io/calculator/" target="_blank" rel="noopener noreferrer">
-              <img class="project-img" src="static/img/works/05.jpg" alt="Cosmic Sea Project" />
+              <img class="project-img" src="{{ url_for('static', filename='img/works/05.jpg') }}" alt="Cosmic Sea Project" />
               <div class="project-mask">
                 <div class="project-caption">
                   <h5 class="white">Calculator</h5>
@@ -456,7 +456,7 @@
           </div>
           <div class="project-box">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <img class="project-img" src="static/img/works/06.jpg" alt="eCommerce Project" />
+              <img class="project-img" src="{{ url_for('static', filename='img/works/06.jpg') }}" alt="eCommerce Project" />
               <div class="project-mask">
                 <div class="project-caption">
                   <h5 class="white">eCommerce</h5>
@@ -512,7 +512,7 @@
           <div class="social-links-row footer-social">
             <a href="https://github.com/httpstarL" target="_blank">
               <img
-                src="static/img/social_icons/github.svg"
+                src="{{ url_for('static', filename='img/social_icons/github.svg') }}"
                 alt="Link to GitHub account"
               />
             </a>
@@ -520,25 +520,25 @@
             <a href="https://www.linkedin.com/in/chaitanya-mithil-0110b22b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                target="_blank">
               <img
-                src="static/img/social_icons/linkedin.svg"
+                src="{{ url_for('static', filename='img/social_icons/linkedin.svg') }}"
                 alt="Link to LinkedIn profile"
               />
             </a>
 
             <a href="https://www.facebook.com/share/1KJusmZWri/" target="_blank">
               <img
-                src="static/img/social_icons/facebook.svg"
+                src="{{ url_for('static', filename='img/social_icons/facebook.svg') }}"
                 alt="Link to facebook profile"
               />
             </a>
 
             <a href="https://x.com/chaitanyamithil?t=XWGQLxIdhgpENAMUu6NCBA&s=09">
-              <img src="static/img/social_icons/xing.svg" alt="Link to Xing profile" />
+              <img src="{{ url_for('static', filename='img/social_icons/xing.svg') }}" alt="Link to Xing profile" />
             </a>
 
             <a href="https://www.instagram.com/chaitx.kshatriya18?igsh=aG82Ynl1Y2U0ajc1" target="_blank">
               <img
-                src="static/img/social_icons/instagram.svg"
+                src="{{ url_for('static', filename='img/social_icons/instagram.svg') }}"
                 alt="Link to instagram profile"
             /></a>
           </div>
@@ -552,7 +552,7 @@
 
     <div id="goToTop" class="goToTop">
       <a href="#home">
-        <img src="static/img/icons/arrow_up.svg" alt="Back to top"
+        <img src="{{ url_for('static', filename='img/icons/arrow_up.svg') }}" alt="Back to top"
       /></a>
     </div>
 
@@ -562,6 +562,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="static/js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>
